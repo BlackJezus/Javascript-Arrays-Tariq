@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sharkshuffle</title>
+    <style>
+        html {
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        body {
+            font-family: 'Copse', serif;
+            text-align: center;
+        }
+        img{
+            height: 300px;
+            width: 300px;
+            border: 0px;
+        }
+        #pics {
+            width: 900px;
+            height: 900px;
+            border: solid 1px black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>SharkShuffle</h1>
+<div id="pics">
+    <img src="img/shark1.jpg">
+    <img src="img/shark2.jpg">
+    <img src="img/shark3.jpg">
+    <img src="img/shark4.jpg">
+    <img src="img/shark5.jpg">
+    <img src="img/shark6.jpg">
+    <img src="img/shark7.jpg">
+    <img src="img/shark8.jpg">
+    <img src="img/shark9.jpg">
+</div>
+<!--<script src="/monkeyshuffle1.js"></script>-->
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomNumbers =[]
+
+    while(randomNumbers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if(randomNumbers.lastIndexOf(random) == -1) {
+            randomNumbers.push(random);
+        }
+    }
+
+    random = 0;
+    for (var plaatje in plaatjes) {
+       plaatjes[plaatje].src = "img/shark" + randomNumbers[random] + ".jpg";
+       random++;
+    }
+
+
+    // for(var i = 0; i < plaatjes.lenght; i++) {
+    //     random = Math.floor(Math.random() * 9) + 1;
+    //     plaatjes[i].src = "img/shark" + random + ".jpg";
+    // }
+
+
+</script>
+</body>
+</html>
